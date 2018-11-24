@@ -1,0 +1,67 @@
+<footer>
+  <div class="container">
+      <h2 class="section-head">ABOUT ME</h2>
+
+      <p class="section-desc">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+
+      <div class="footer-grid">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="item">
+              <h4>CONTACT INFO</h4>
+              <p>Why you should hire me writeup Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque nascetur ridiculus mus.</p>
+              <ul class="list-unstyled contact">
+                <li>
+                  <i class="fa fa-map-marker"></i>
+                  <span>New Street 22545, Nexa Road, New York City, USA</span>
+                </li>
+                <li>
+                  <i class="fa fa-envelope"></i>
+                  <span>
+                    <a href="#">admin@msp.com</a>
+                  </span>
+                </li>
+                <li>
+                  <i class="fa fa-phone"></i>
+                  <span>001-000-000-000</span>
+                </li>
+              </ul>
+
+              <ul class="list-unstyled social">
+                <li><i class="fa fa-facebook"></i></li>
+                <li><i class="fa fa-twitter"></i></li>
+                <li><i class="fa fa-google-plus"></i></li>
+                <li><i class="fa fa-github"></i></li>
+                <li><i class="fa fa-behance"></i></li>
+                <li><i class="fa fa-dribbble"></i></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+              <input type="hidden" name="id" [(ngModel)]="service.formData.id" #id="ngModel">
+
+              <div class="form-group">
+                <input name="name" #name="ngModel" [(ngModel)]="service.formData.name" class="form-control" placeholder="Name" required>
+                <div class="validation" *ngIf="name.invalid && name.touched">This field is required.</div>
+              </div>
+
+              <div class="form-group">
+                <input name="email" #email="ngModel" [(ngModel)]="service.formData.email" class="form-control" placeholder="Email" required>
+                <div class="validation" *ngIf="email.invalid && email.touched">This field is required.</div>
+              </div>
+
+              <div class="form-group">
+                <textarea name="message" #message="ngModel" [(ngModel)]="service.formData.message" class="form-control" placeholder="Message" cols="30" rows="7" required></textarea>
+                <div class="validation" *ngIf="message.invalid && message.touched">This field is required.</div>
+              </div>
+
+              <div class="form-group">
+                <input type="submit" value="Submit" [disabled]="form.invalid" class="btn btn-danger btn-lg">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+  </div>
+</footer>

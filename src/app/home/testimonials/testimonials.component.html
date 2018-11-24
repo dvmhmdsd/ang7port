@@ -1,0 +1,14 @@
+<section class="testimonials text-center">
+    <div class="container">
+        <ul class="list-unstyled">
+            <li class="col-md-6" *ngFor="let item of list">
+                <div class="person-img">
+                    <img src="../../../assets/download.jpg" alt="person">
+                </div>
+                <q>{{item.preview}}</q>
+                <p class="name"> {{item.name}} </p>
+                <p class="pos"> {{item.job}} </p>
+            </li>
+        </ul>
+    </div>
+</section>

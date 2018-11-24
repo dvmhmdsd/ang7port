@@ -1,0 +1,42 @@
+@import '../../../styles.scss';
+
+.testimonials {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-image: url(http://www.uigrid.com/html/coder-bits/assets/img/client-testimonial.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    color: #fff;
+    .list-unstyled {
+        text-align: center;
+        .slick-slide {
+            padding: 30px;
+        }
+
+        li {
+            display: inline-block;
+        }
+        .person-img {
+
+            img {
+                display: inline-block;
+                height: 100px;
+                border-radius: 50%;
+                border: 5px solid $main-color;
+                margin-bottom: 10px;
+            }
+        }
+
+        p.name {
+            font-size: 25px;
+            color: $main-color;
+            margin: 20px;
+            font-weight: bold;
+        }
+
+        p.pos {
+            font-weight: bold;
+            color: #fff;
+        }
+    }    
+}

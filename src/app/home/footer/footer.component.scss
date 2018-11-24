@@ -1,0 +1,53 @@
+@import '../../../styles.scss';
+
+footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    .footer-grid {
+        margin-top: 80px;
+        .item {
+            h4 {
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            p {
+                margin-bottom: 30px;
+            }
+
+            .contact {
+                li {
+                    margin-bottom: 20px;
+                    font-size: 18px;
+                    .fa {
+                        margin-right: 20px;
+                    }
+                }
+            }
+
+            .social {
+                li {
+                    display: inline-block;
+                    text-align: center;
+                    margin-right: 10px;
+                    font-size: 30px;
+                    border: 1px solid #999;
+                    color: #777;
+                    transition: all 0.3s;
+                    width: 50px;
+                    height: 50px;
+                    &:hover {
+                        background-color: $main-color;
+                        border-color: $main-color;
+                        cursor: pointer;
+                        color: #fff;
+                    }
+        
+                    i {
+                        line-height: 50px;
+                    }
+                }
+            }
+        }
+    }
+}

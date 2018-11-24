@@ -1,0 +1,74 @@
+<div class="comp">
+  <section class="testimonials">
+    <div class="container">
+      <h2>Testimonials management</h2>
+      <div class="row">
+          <div class="col-md-6">
+              <form #form="ngForm" (ngSubmit)="testiSubmit(form)">
+                <input type="hidden" name="id" #id="ngModel" [(ngModel)]="service.testimonial.id">
+      
+                <div class="form-group">
+                  <input placeholder="Name" class="form-control" name="name" #name="ngModel" [(ngModel)]="service.testimonial.name" required>
+                  <div class="validation" *ngIf="name.invalid && name.touched">This field is required</div>
+                </div>
+      
+                <div class="form-group">
+                  <input placeholder="Position" class="form-control" name="job" #job="ngModel" [(ngModel)]="service.testimonial.job" required>
+                  <div class="validation" *ngIf="job.invalid && job.touched">This field is required</div>
+                </div>
+      
+                <div class="form-group">
+                  <textarea rows="7" placeholder="The feedback" class="form-control" name="preview" #preview="ngModel" [(ngModel)]="service.testimonial.preview" required></textarea>
+                  <div class="validation" *ngIf="preview.invalid && preview.touched">This field is required</div>
+                </div>
+
+                <div class="form-group">
+                  <input type="submit" value="Submit" class="btn btn-danger">
+                </div>
+              </form>
+            </div>
+      
+            <div class="col-md-6">
+              <table class="table table-hover">
+                <thead>
+                  <th>Name</th>
+                  <th>Position</th>
+                  <th></th>
+                  <th></th>
+                </thead>
+
+                <tbody>
+                  <tr *ngFor="let item of list">
+                    <td> {{item.name}} </td>
+                    <td> {{item.job}} </td>
+                    <td> <a class="btn text-info" (click)="onEdit(item)"> <i class="fa fa-edit"></i> </a> </td>
+                    <td> <a class="btn text-danger" (click)="onDelete(item.id)"> <i class="fa fa-trash"></i> </a> </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <hr>
+  </div>
+
+  <section class="contact">
+      <div class="container">
+        <h2>Contacts</h2>
+          <div class="card" *ngFor="let item of list2">
+              <div class="card-header">
+                {{item.email}}
+              </div>
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p>{{item.message}}</p>
+                  <footer class="blockquote-footer">{{item.name}}</footer>
+                </blockquote>
+              </div>
+            </div>
+      </div>
+  </section>
+</div>
